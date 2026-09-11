@@ -1,0 +1,603 @@
+/* =========================================================
+   SMART TASK MANAGER
+   MODERN CALENDAR PAGE
+========================================================= */
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+body {
+    margin: 0;
+
+    background: #f7f8fc;
+
+    color: #111827;
+
+    font-family:
+            Inter,
+            -apple-system,
+            BlinkMacSystemFont,
+            "Segoe UI",
+            sans-serif;
+}
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+.calendar-page {
+    width: min(1440px, calc(100% - 56px));
+
+    margin: 0 auto;
+
+    padding: 38px 0 55px;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+.calendar-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    margin-bottom: 28px;
+}
+
+.calendar-eyebrow {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin-bottom: 8px;
+
+    color: #6366f1;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.2px;
+}
+
+.calendar-eyebrow i {
+    font-size: 12px;
+}
+
+.calendar-heading h1 {
+    margin: 0;
+
+    color: #111827;
+
+    font-size: 30px;
+
+    font-weight: 750;
+
+    letter-spacing: -0.8px;
+}
+
+.calendar-heading p {
+    margin: 7px 0 0;
+
+    color: #6b7280;
+
+    font-size: 13px;
+}
+
+/* =========================================================
+   NEW TASK BUTTON
+========================================================= */
+.calendar-new-task {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    min-height: 42px;
+
+    padding: 0 17px;
+
+    border-radius: 9px;
+
+    background: #4f46e5;
+
+    color: #ffffff;
+
+    font-size: 11px;
+
+    font-weight: 650;
+
+    text-decoration: none;
+
+    box-shadow:
+            0 7px 18px rgba(79, 70, 229, 0.20);
+
+    transition:
+            transform 0.2s ease,
+            background 0.2s ease,
+            box-shadow 0.2s ease;
+}
+
+.calendar-new-task:hover {
+    background: #4338ca;
+
+    color: #ffffff;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+            0 10px 24px rgba(79, 70, 229, 0.25);
+}
+
+.calendar-new-task i {
+    font-size: 13px;
+}
+
+/* =========================================================
+   CALENDAR PANEL
+========================================================= */
+.calendar-panel {
+    background: #ffffff;
+
+    border: 1px solid #e7e9ef;
+
+    border-radius: 17px;
+
+    overflow: hidden;
+
+    box-shadow:
+            0 10px 35px rgba(15, 23, 42, 0.055);
+}
+
+/* =========================================================
+   PANEL TOP
+========================================================= */
+.calendar-panel-top {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 20px 24px;
+
+    border-bottom: 1px solid #edf0f4;
+}
+
+.calendar-panel-title {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.calendar-panel-icon {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 38px;
+
+    height: 38px;
+
+    border-radius: 10px;
+
+    background: #eef2ff;
+
+    color: #4f46e5;
+
+    font-size: 16px;
+}
+
+.calendar-panel-title h2 {
+    margin: 0;
+
+    color: #111827;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+.calendar-panel-title p {
+    margin: 3px 0 0;
+
+    color: #9ca3af;
+
+    font-size: 10px;
+}
+
+.calendar-hint {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    color: #9ca3af;
+
+    font-size: 10px;
+}
+
+.calendar-hint i {
+    color: #818cf8;
+}
+
+/* =========================================================
+   CALENDAR AREA
+========================================================= */
+.calendar-wrapper {
+    padding: 24px;
+}
+
+/* =========================================================
+   FULL CALENDAR
+========================================================= */
+#calendar {
+    width: 100%;
+}
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+.fc .fc-toolbar {
+    margin-bottom: 20px;
+}
+
+.fc .fc-toolbar-title {
+    color: #111827;
+
+    font-size: 20px;
+
+    font-weight: 750;
+
+    letter-spacing: -0.3px;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+.fc .fc-button {
+    min-height: 34px;
+
+    padding: 0 12px;
+
+    border: 1px solid #e5e7eb !important;
+
+    border-radius: 8px !important;
+
+    background: #ffffff !important;
+
+    color: #4b5563 !important;
+
+    font-size: 10px;
+
+    font-weight: 650;
+
+    box-shadow: none !important;
+
+    text-shadow: none !important;
+}
+
+.fc .fc-button:hover {
+    background: #f5f5ff !important;
+
+    border-color: #c7d2fe !important;
+
+    color: #4f46e5 !important;
+}
+
+.fc .fc-button-primary:not(:disabled).fc-button-active {
+    background: #4f46e5 !important;
+
+    border-color: #4f46e5 !important;
+
+    color: #ffffff !important;
+}
+
+/* =========================================================
+   TODAY
+========================================================= */
+.fc .fc-today-button {
+    background: #111827 !important;
+
+    border-color: #111827 !important;
+
+    color: #ffffff !important;
+}
+
+.fc .fc-today-button:hover {
+    background: #1f2937 !important;
+
+    border-color: #1f2937 !important;
+
+    color: #ffffff !important;
+}
+
+/* =========================================================
+   GRID
+========================================================= */
+.fc-theme-standard .fc-scrollgrid {
+    border: 1px solid #e5e7eb;
+
+    border-radius: 11px;
+
+    overflow: hidden;
+}
+
+.fc-theme-standard td,
+.fc-theme-standard th {
+    border-color: #edf0f4;
+}
+
+/* =========================================================
+   WEEKDAY HEADER
+========================================================= */
+.fc .fc-col-header-cell {
+    background: #fafbfc;
+}
+
+.fc .fc-col-header-cell-cushion {
+    display: block;
+
+    padding: 12px 5px;
+
+    color: #6b7280;
+
+    font-size: 9px;
+
+    font-weight: 750;
+
+    letter-spacing: 0.7px;
+
+    text-transform: uppercase;
+
+    text-decoration: none;
+}
+
+/* =========================================================
+   DAY CELLS
+========================================================= */
+.fc .fc-daygrid-day {
+    min-height: 115px;
+
+    background: #ffffff;
+}
+
+.fc .fc-daygrid-day:hover {
+    background: #fcfcfe;
+}
+
+/* =========================================================
+   DATE
+========================================================= */
+.fc .fc-daygrid-day-number {
+    padding: 9px 10px;
+
+    color: #6b7280;
+
+    font-size: 11px;
+
+    font-weight: 650;
+
+    text-decoration: none;
+}
+
+/* =========================================================
+   OTHER MONTH
+========================================================= */
+.fc .fc-day-other {
+    background: #fafafa;
+}
+
+.fc .fc-day-other .fc-daygrid-day-number {
+    color: #c5c9d2;
+}
+
+/* =========================================================
+   TODAY CELL
+========================================================= */
+.fc .fc-day-today {
+    background: #f5f7ff !important;
+}
+
+.fc .fc-day-today .fc-daygrid-day-number {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 26px;
+
+    height: 26px;
+
+    margin: 4px;
+
+    padding: 0;
+
+    border-radius: 50%;
+
+    background: #4f46e5;
+
+    color: #ffffff;
+}
+
+/* =========================================================
+   TASK EVENTS
+========================================================= */
+.fc .fc-event {
+    margin: 2px 5px;
+
+    padding: 4px 7px;
+
+    min-height: 22px;
+
+    border: none !important;
+
+    border-radius: 6px;
+
+    background: #4f46e5 !important;
+
+    color: #ffffff !important;
+
+    font-size: 10px;
+
+    font-weight: 650;
+
+    cursor: pointer;
+
+    box-shadow: none !important;
+}
+
+.fc .fc-event:hover {
+    background: #4338ca !important;
+
+    transform: translateY(-1px);
+}
+
+.fc .fc-event-title {
+    padding: 0;
+
+    font-weight: 650;
+}
+
+/* =========================================================
+   MORE LINK
+========================================================= */
+.fc .fc-daygrid-more-link {
+    margin-left: 5px;
+
+    color: #4f46e5;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+/* =========================================================
+   WEEK VIEW
+========================================================= */
+.fc .fc-timegrid-slot {
+    height: 43px;
+
+    border-color: #edf0f4;
+}
+
+.fc .fc-timegrid-axis-cushion,
+.fc .fc-timegrid-slot-label-cushion {
+    color: #9ca3af;
+
+    font-size: 9px;
+}
+
+.fc .fc-timegrid-event {
+    border: none !important;
+
+    border-radius: 6px;
+
+    background: #4f46e5 !important;
+
+    padding: 3px 5px;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+@media (max-width: 900px) {
+
+    .calendar-page {
+        width: calc(100% - 32px);
+
+        padding-top: 30px;
+    }
+
+    .calendar-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .calendar-panel-top {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+    .calendar-wrapper {
+        padding: 16px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .calendar-page {
+        width: calc(100% - 20px);
+
+        padding-top: 22px;
+    }
+
+    .calendar-heading h1 {
+        font-size: 25px;
+    }
+
+    .calendar-new-task {
+        width: 100%;
+
+        justify-content: center;
+    }
+
+    .calendar-wrapper {
+        padding: 9px;
+    }
+
+    .fc .fc-toolbar {
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+    .fc .fc-toolbar-title {
+        font-size: 17px;
+    }
+
+    .fc .fc-toolbar-chunk {
+        display: flex;
+
+        justify-content: center;
+    }
+
+    .fc .fc-daygrid-day {
+        min-height: 70px;
+    }
+
+    .fc .fc-daygrid-day-number {
+        padding: 6px;
+
+        font-size: 9px;
+    }
+
+    .fc .fc-event {
+        margin: 1px 2px;
+
+        padding: 2px 4px;
+
+        font-size: 8px;
+    }
+
+}

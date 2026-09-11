@@ -1,0 +1,856 @@
+/* =========================================================
+   SMART TASK MANAGER
+   MODERN MY TASKS PAGE
+========================================================= */
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.tasks-page {
+    margin: 0;
+
+    background: #f7f8fc;
+
+    color: #111827;
+
+    font-family:
+            Inter,
+            -apple-system,
+            BlinkMacSystemFont,
+            "Segoe UI",
+            sans-serif;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.tasks-container {
+    width: min(1440px, calc(100% - 56px));
+
+    margin: 0 auto;
+
+    padding: 38px 0 55px;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.tasks-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    margin-bottom: 28px;
+}
+
+
+.tasks-eyebrow {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin-bottom: 8px;
+
+    color: #6366f1;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.2px;
+
+    text-transform: uppercase;
+}
+
+
+.tasks-eyebrow i {
+    font-size: 12px;
+}
+
+
+.tasks-heading h1 {
+    margin: 0;
+
+    color: #111827;
+
+    font-size: 30px;
+
+    font-weight: 750;
+
+    letter-spacing: -0.8px;
+}
+
+
+.tasks-heading p {
+    margin: 7px 0 0;
+
+    color: #6b7280;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   NEW TASK BUTTON
+========================================================= */
+
+.tasks-new-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    min-height: 42px;
+
+    padding: 0 17px;
+
+    border: 0;
+
+    border-radius: 9px;
+
+    background: #4f46e5;
+
+    color: #ffffff;
+
+    font-size: 11px;
+
+    font-weight: 650;
+
+    text-decoration: none;
+
+    box-shadow:
+            0 7px 18px rgba(79, 70, 229, 0.20);
+
+    transition:
+            transform 0.2s ease,
+            background 0.2s ease,
+            box-shadow 0.2s ease;
+}
+
+
+.tasks-new-btn:hover {
+    background: #4338ca;
+
+    color: #ffffff;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+            0 10px 24px rgba(79, 70, 229, 0.25);
+}
+
+
+.tasks-new-btn i {
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   SEARCH PANEL
+========================================================= */
+
+.tasks-search-panel {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 16px;
+
+    margin-bottom: 18px;
+
+    background: #ffffff;
+
+    border: 1px solid #e7e9ef;
+
+    border-radius: 14px;
+
+    box-shadow:
+            0 6px 22px rgba(15, 23, 42, 0.035);
+}
+
+
+.tasks-search {
+    position: relative;
+
+    flex: 1;
+}
+
+
+.tasks-search-icon {
+    position: absolute;
+
+    left: 14px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #9ca3af;
+
+    font-size: 14px;
+
+    pointer-events: none;
+}
+
+
+.tasks-search input {
+    width: 100%;
+
+    height: 42px;
+
+    padding: 0 14px 0 39px;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 9px;
+
+    outline: none;
+
+    background: #f9fafb;
+
+    color: #111827;
+
+    font-size: 11px;
+
+    transition:
+            border-color 0.2s ease,
+            background 0.2s ease,
+            box-shadow 0.2s ease;
+}
+
+
+.tasks-search input::placeholder {
+    color: #9ca3af;
+}
+
+
+.tasks-search input:focus {
+    background: #ffffff;
+
+    border-color: #a5b4fc;
+
+    box-shadow:
+            0 0 0 3px rgba(99, 102, 241, 0.09);
+}
+
+
+.tasks-search-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    height: 42px;
+
+    min-width: 100px;
+
+    padding: 0 16px;
+
+    border: 0;
+
+    border-radius: 9px;
+
+    background: #111827;
+
+    color: #ffffff;
+
+    font-size: 11px;
+
+    font-weight: 650;
+
+    cursor: pointer;
+
+    transition:
+            background 0.2s ease,
+            transform 0.2s ease;
+}
+
+
+.tasks-search-btn:hover {
+    background: #1f2937;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   FILTER BAR
+========================================================= */
+
+.tasks-filter-bar {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 18px;
+}
+
+
+.tasks-filter-label {
+    margin-right: 5px;
+
+    color: #9ca3af;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.7px;
+}
+
+
+.task-filter {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    min-height: 31px;
+
+    padding: 0 12px;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 20px;
+
+    background: #ffffff;
+
+    color: #6b7280;
+
+    font-size: 10px;
+
+    font-weight: 650;
+
+    text-decoration: none;
+
+    transition:
+            background 0.2s ease,
+            border-color 0.2s ease,
+            color 0.2s ease,
+            transform 0.2s ease;
+}
+
+
+.task-filter:hover {
+    border-color: #c7d2fe;
+
+    background: #eef2ff;
+
+    color: #4f46e5;
+
+    transform: translateY(-1px);
+}
+
+
+.task-filter.active {
+    border-color: #4f46e5;
+
+    background: #4f46e5;
+
+    color: #ffffff;
+}
+
+
+.task-filter-dot {
+    width: 6px;
+
+    height: 6px;
+
+    border-radius: 50%;
+}
+
+
+.task-filter-dot.high {
+    background: #ef4444;
+}
+
+
+.task-filter-dot.medium {
+    background: #f59e0b;
+}
+
+
+.task-filter-dot.low {
+    background: #22c55e;
+}
+
+
+/* =========================================================
+   TASK TABLE CARD
+========================================================= */
+
+.tasks-table-card {
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid #e7e9ef;
+
+    border-radius: 15px;
+
+    box-shadow:
+            0 8px 28px rgba(15, 23, 42, 0.045);
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.tasks-table {
+    width: 100%;
+
+    margin: 0;
+
+    border-collapse: separate;
+
+    border-spacing: 0;
+}
+
+
+.tasks-table thead th {
+    padding: 14px 18px;
+
+    border-bottom: 1px solid #edf0f4;
+
+    background: #fafbfc;
+
+    color: #6b7280;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.65px;
+
+    text-transform: uppercase;
+
+    white-space: nowrap;
+}
+
+
+.tasks-table tbody td {
+    padding: 15px 18px;
+
+    border-bottom: 1px solid #f0f1f4;
+
+    color: #374151;
+
+    font-size: 11px;
+
+    vertical-align: middle;
+}
+
+
+.tasks-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+
+.tasks-table tbody tr {
+    transition:
+            background 0.15s ease;
+}
+
+
+.tasks-table tbody tr:hover {
+    background: #fafbff;
+}
+
+
+/* =========================================================
+   TASK TITLE
+========================================================= */
+
+.task-name {
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    min-width: 180px;
+}
+
+
+.task-name-icon {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 34px;
+
+    height: 34px;
+
+    flex-shrink: 0;
+
+    border-radius: 9px;
+
+    background: #eef2ff;
+
+    color: #4f46e5;
+
+    font-size: 14px;
+}
+
+
+.task-name-text {
+    max-width: 220px;
+
+    overflow: hidden;
+
+    color: #111827;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.task-description {
+    display: block;
+
+    max-width: 250px;
+
+    overflow: hidden;
+
+    color: #9ca3af;
+
+    font-size: 10px;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   BADGES
+========================================================= */
+
+.task-badge {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 25px;
+
+    padding: 0 10px;
+
+    border-radius: 20px;
+
+    font-size: 9px;
+
+    font-weight: 750;
+
+    white-space: nowrap;
+}
+
+
+/* Priority */
+
+.priority-high {
+    background: #fef2f2;
+
+    color: #dc2626;
+}
+
+
+.priority-medium {
+    background: #fffbeb;
+
+    color: #d97706;
+}
+
+
+.priority-low {
+    background: #f0fdf4;
+
+    color: #16a34a;
+}
+
+
+/* Status */
+
+.status-pending {
+    background: #f3f4f6;
+
+    color: #6b7280;
+}
+
+
+.status-progress {
+    background: #eef2ff;
+
+    color: #4f46e5;
+}
+
+
+.status-completed {
+    background: #ecfdf5;
+
+    color: #059669;
+}
+
+
+/* =========================================================
+   DUE DATE
+========================================================= */
+
+.task-due-date {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    color: #6b7280;
+
+    font-size: 10px;
+
+    white-space: nowrap;
+}
+
+
+.task-due-date i {
+    color: #9ca3af;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.task-actions {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 6px;
+}
+
+
+.task-action {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 31px;
+
+    height: 31px;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    font-size: 12px;
+
+    text-decoration: none;
+
+    transition:
+            background 0.2s ease,
+            border-color 0.2s ease,
+            color 0.2s ease,
+            transform 0.2s ease;
+}
+
+
+.task-action.edit {
+    color: #4f46e5;
+}
+
+
+.task-action.edit:hover {
+    background: #eef2ff;
+
+    border-color: #c7d2fe;
+
+    color: #4338ca;
+
+    transform: translateY(-1px);
+}
+
+
+.task-action.delete {
+    color: #ef4444;
+}
+
+
+.task-action.delete:hover {
+    background: #fef2f2;
+
+    border-color: #fecaca;
+
+    color: #dc2626;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.tasks-empty {
+    padding: 65px 20px;
+
+    text-align: center;
+}
+
+
+.tasks-empty-icon {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 54px;
+
+    height: 54px;
+
+    margin: 0 auto 14px;
+
+    border-radius: 14px;
+
+    background: #f3f4f6;
+
+    color: #9ca3af;
+
+    font-size: 22px;
+}
+
+
+.tasks-empty h4 {
+    margin: 0 0 6px;
+
+    color: #374151;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+
+.tasks-empty p {
+    margin: 0;
+
+    color: #9ca3af;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .tasks-container {
+        width: calc(100% - 35px);
+    }
+
+
+    .tasks-table {
+        min-width: 850px;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .tasks-container {
+        width: calc(100% - 22px);
+
+        padding-top: 25px;
+    }
+
+
+    .tasks-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .tasks-heading h1 {
+        font-size: 25px;
+    }
+
+
+    .tasks-new-btn {
+        width: 100%;
+    }
+
+
+    .tasks-search-panel {
+        align-items: stretch;
+
+        flex-direction: column;
+    }
+
+
+    .tasks-search-btn {
+        width: 100%;
+    }
+
+
+    .tasks-table {
+        min-width: 850px;
+    }
+
+}
+.delete-task-form {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}

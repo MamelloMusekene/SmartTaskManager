@@ -1,0 +1,830 @@
+/* =========================================================
+   SMART TASK MANAGER
+   COLLAPSIBLE DASHBOARD SIDEBAR
+========================================================= */
+
+:root {
+
+    --sidebar-open: 235px;
+    --sidebar-closed: 72px;
+
+    --sidebar-bg: #111827;
+    --sidebar-hover: #1f2937;
+    --sidebar-active: #26204d;
+
+    --sidebar-text: #9ca3af;
+    --sidebar-white: #ffffff;
+    --sidebar-accent: #a5b4fc;
+
+    --sidebar-border: #273142;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.dashboard-sidebar {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+    z-index: 1100;
+
+    display: flex;
+    flex-direction: column;
+
+    width: var(--sidebar-open);
+
+    padding: 20px 13px;
+
+    background: var(--sidebar-bg);
+
+    border-right: 1px solid #1f2937;
+
+    color: var(--sidebar-white);
+
+    box-sizing: border-box;
+
+    transition: width 0.25s ease;
+}
+
+
+/* =========================================================
+   TOP
+========================================================= */
+
+.sidebar-top {
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    min-height: 48px;
+
+    margin-bottom: 17px;
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.sidebar-brand {
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding-left: 7px;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+}
+
+
+.sidebar-brand:hover {
+    color: #ffffff;
+}
+
+
+.sidebar-brand-icon {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 36px;
+    height: 36px;
+
+    min-width: 36px;
+
+    border-radius: 10px;
+
+    background: #4f46e5;
+
+    color: #ffffff;
+
+    font-size: 17px;
+}
+
+
+.sidebar-brand-name {
+
+    color: #ffffff;
+
+    font-size: 17px;
+
+    font-weight: 750;
+
+    letter-spacing: -0.3px;
+
+    white-space: nowrap;
+}
+
+
+.sidebar-brand-name span {
+    color: var(--sidebar-accent);
+}
+
+
+/* =========================================================
+   TOGGLE BUTTON
+========================================================= */
+
+.sidebar-toggle {
+
+    position: absolute;
+
+    top: 5px;
+    right: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+
+    padding: 0;
+
+    border: 1px solid #303b4d;
+
+    border-radius: 8px;
+
+    background: #1a2332;
+
+    color: #9ca3af;
+
+    cursor: pointer;
+
+    z-index: 5;
+
+    transition:
+            background 0.2s ease,
+            color 0.2s ease;
+}
+
+
+.sidebar-toggle:hover {
+
+    background: #273449;
+
+    color: #ffffff;
+}
+
+
+.sidebar-toggle i {
+
+    font-size: 11px;
+
+    transition:
+            transform 0.25s ease;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.sidebar-navigation {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    width: 100%;
+}
+
+
+.sidebar-section-title {
+
+    padding: 10px 12px 8px;
+
+    color: #667085;
+
+    font-size: 8px;
+
+    font-weight: 750;
+
+    letter-spacing: 1px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   NAVIGATION LINK
+========================================================= */
+
+.sidebar-link {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    width: 100%;
+
+    min-height: 43px;
+
+    padding: 0 12px;
+
+    box-sizing: border-box;
+
+    border-radius: 9px;
+
+    color: var(--sidebar-text);
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    transition:
+            background 0.2s ease,
+            color 0.2s ease;
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.sidebar-link i {
+
+    display: flex !important;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 18px;
+    min-width: 18px;
+
+    height: 18px;
+
+    flex-shrink: 0;
+
+    color: #7f8898;
+
+    font-size: 15px;
+
+    visibility: visible;
+
+    opacity: 1;
+}
+
+
+.sidebar-link:hover {
+
+    background: var(--sidebar-hover);
+
+    color: #ffffff;
+}
+
+
+.sidebar-link:hover i {
+
+    color: var(--sidebar-accent);
+}
+
+
+.sidebar-link.active {
+
+    background: var(--sidebar-active);
+
+    color: #ffffff;
+}
+
+
+.sidebar-link.active i {
+
+    color: var(--sidebar-accent);
+}
+
+
+/* =========================================================
+   ACTIVE INDICATOR
+========================================================= */
+
+.sidebar-link.active::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    width: 3px;
+    height: 21px;
+
+    border-radius: 0 4px 4px 0;
+
+    background: #818cf8;
+}
+
+
+/* =========================================================
+   BOTTOM
+========================================================= */
+
+.sidebar-bottom {
+
+    margin-top: auto;
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.sidebar-divider {
+
+    height: 1px;
+
+    margin: 0 5px 15px;
+
+    background: var(--sidebar-border);
+}
+
+
+/* =========================================================
+   USER
+========================================================= */
+
+.sidebar-user {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 8px 9px 13px;
+
+    white-space: nowrap;
+}
+
+
+.sidebar-avatar {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 33px;
+    height: 33px;
+
+    min-width: 33px;
+
+    border-radius: 50%;
+
+    background: #26204d;
+
+    color: var(--sidebar-accent);
+
+    font-size: 14px;
+}
+
+
+.sidebar-user-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-width: 0;
+}
+
+
+.sidebar-user-info strong {
+
+    color: #e5e7eb;
+
+    font-size: 10px;
+
+    font-weight: 650;
+}
+
+
+.sidebar-user-info span {
+
+    margin-top: 3px;
+
+    color: #6b7280;
+
+    font-size: 8px;
+}
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+.sidebar-logout {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    width: 100%;
+
+    min-height: 38px;
+
+    padding: 0 11px;
+
+    border: 0;
+
+    border-radius: 8px;
+
+    background: transparent;
+
+    color: #8f98a7;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    text-align: left;
+
+    white-space: nowrap;
+
+    cursor: pointer;
+}
+
+
+.sidebar-logout i {
+
+    display: flex !important;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 18px;
+
+    min-width: 18px;
+
+    height: 18px;
+
+    flex-shrink: 0;
+
+    visibility: visible !important;
+
+    opacity: 1 !important;
+}
+
+
+.sidebar-logout:hover {
+
+    background: #2a1c23;
+
+    color: #fca5a5;
+}
+
+
+/* =========================================================
+   DASHBOARD CONTENT
+========================================================= */
+
+.dashboard-page {
+
+    margin-left: var(--sidebar-open);
+
+    min-height: 100vh;
+
+    transition: margin-left 0.25s ease;
+}
+
+
+/* =========================================================
+   COLLAPSED SIDEBAR
+========================================================= */
+
+.dashboard-sidebar.collapsed {
+
+    width: var(--sidebar-closed);
+}
+
+
+/* =========================================================
+   COLLAPSED BRAND
+========================================================= */
+
+.dashboard-sidebar.collapsed .sidebar-brand {
+
+    justify-content: center;
+
+    width: 36px;
+
+    margin-left: 5px;
+
+    padding: 0;
+
+    gap: 0;
+}
+
+
+.dashboard-sidebar.collapsed .sidebar-brand-name {
+
+    display: none !important;
+}
+
+
+/* =========================================================
+   COLLAPSED TOGGLE
+========================================================= */
+
+.dashboard-sidebar.collapsed .sidebar-toggle {
+
+    right: 0;
+}
+
+
+.dashboard-sidebar.collapsed .sidebar-toggle i {
+
+    transform: rotate(180deg);
+}
+
+
+/* =========================================================
+   COLLAPSED SECTION TITLE
+========================================================= */
+
+.dashboard-sidebar.collapsed .sidebar-section-title {
+
+    display: none !important;
+}
+
+
+/* =========================================================
+   COLLAPSED NAVIGATION
+========================================================= */
+
+.dashboard-sidebar.collapsed .sidebar-link {
+
+    justify-content: center;
+
+    width: 46px;
+
+    min-width: 46px;
+
+    height: 43px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    padding: 0;
+
+    gap: 0;
+}
+
+
+/* =========================================================
+   COLLAPSED ICONS
+   THESE MUST ALWAYS REMAIN VISIBLE
+========================================================= */
+
+.dashboard-sidebar.collapsed .sidebar-link i {
+
+    display: flex !important;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 18px !important;
+    min-width: 18px !important;
+
+    height: 18px !important;
+
+    margin: 0 !important;
+
+    padding: 0 !important;
+
+    flex-shrink: 0;
+
+    visibility: visible !important;
+
+    opacity: 1 !important;
+
+    color: #9ca3af !important;
+
+    font-size: 15px !important;
+}
+
+
+.dashboard-sidebar.collapsed .sidebar-link:hover i {
+
+    color: #a5b4fc !important;
+}
+
+
+.dashboard-sidebar.collapsed .sidebar-link.active i {
+
+    color: #a5b4fc !important;
+}
+
+
+/* =========================================================
+   COLLAPSED TEXT
+========================================================= */
+
+.dashboard-sidebar.collapsed .sidebar-link span {
+
+    display: none !important;
+}
+
+
+/* =========================================================
+   COLLAPSED ACTIVE INDICATOR
+========================================================= */
+
+.dashboard-sidebar.collapsed .sidebar-link.active::before {
+
+    left: -1px;
+
+    width: 3px;
+
+    height: 21px;
+}
+
+
+/* =========================================================
+   COLLAPSED USER
+========================================================= */
+
+.dashboard-sidebar.collapsed .sidebar-user {
+
+    justify-content: center;
+
+    padding-left: 0;
+
+    padding-right: 0;
+
+    gap: 0;
+}
+
+
+.dashboard-sidebar.collapsed .sidebar-user-info {
+
+    display: none !important;
+}
+
+
+/* =========================================================
+   COLLAPSED LOGOUT
+========================================================= */
+
+.dashboard-sidebar.collapsed .sidebar-logout {
+
+    justify-content: center;
+
+    width: 46px;
+
+    min-width: 46px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    padding: 0;
+
+    gap: 0;
+}
+
+
+.dashboard-sidebar.collapsed .sidebar-logout i {
+
+    display: flex !important;
+
+    width: 18px !important;
+    min-width: 18px !important;
+
+    height: 18px !important;
+
+    margin: 0 !important;
+
+    visibility: visible !important;
+
+    opacity: 1 !important;
+}
+
+
+.dashboard-sidebar.collapsed .sidebar-logout span {
+
+    display: none !important;
+}
+
+
+/* =========================================================
+   CONTENT WHEN COLLAPSED
+========================================================= */
+
+.dashboard-page.sidebar-collapsed {
+
+    margin-left: var(--sidebar-closed);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .dashboard-sidebar {
+
+        width: var(--sidebar-closed);
+    }
+
+
+    .sidebar-brand {
+
+        justify-content: center;
+
+        width: 36px;
+
+        margin-left: 5px;
+
+        padding: 0;
+    }
+
+
+    .sidebar-brand-name,
+    .sidebar-section-title,
+    .sidebar-link span,
+    .sidebar-user-info,
+    .sidebar-logout span {
+
+        display: none !important;
+    }
+
+
+    .sidebar-link {
+
+        justify-content: center;
+
+        width: 46px;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        padding: 0;
+    }
+
+
+    .sidebar-toggle {
+
+        display: none;
+    }
+
+
+    .sidebar-user {
+
+        justify-content: center;
+
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+
+    .sidebar-logout {
+
+        justify-content: center;
+
+        width: 46px;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        padding: 0;
+    }
+
+
+    .dashboard-page {
+
+        margin-left: var(--sidebar-closed);
+    }
+
+}

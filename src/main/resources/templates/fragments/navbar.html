@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<body>
+
+<nav class="top-navbar">
+
+    <div class="top-navbar-container">
+
+
+        <!-- =================================================
+             BRAND
+        ================================================== -->
+
+        <a
+                class="top-navbar-brand"
+                th:href="@{/dashboard}">
+
+            <span class="brand-mark" style="
+                background: #4f46e5 !important;
+                color: #ffffff !important;
+                box-shadow: 0 5px 14px rgba(79, 70, 229, 0.22) !important;
+            ">
+                <i class="bi bi-check2-square"
+                   style="color: #ffffff !important;">
+
+                </i>
+            </span>
+
+            <span class="brand-text">
+                Smart Task Manager
+            </span>
+
+        </a>
+
+
+
+        <!-- =================================================
+             NAVIGATION
+        ================================================== -->
+
+        <div class="top-navbar-links">
+
+
+            <a
+                    class="top-nav-link"
+                    th:href="@{/dashboard}">
+
+                <i class="bi bi-grid-1x2"></i>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <a
+                    class="top-nav-link"
+                    th:href="@{/tasks}">
+
+                <i class="bi bi-list-check"></i>
+
+                <span>
+                    My Tasks
+                </span>
+
+            </a>
+
+
+            <a
+                    class="top-nav-link"
+                    th:href="@{/tasks/board}">
+
+                <i class="bi bi-kanban"></i>
+
+                <span>
+                    Board
+                </span>
+
+            </a>
+
+
+            <a
+                    class="top-nav-link"
+                    th:href="@{/calendar}">
+
+                <i class="bi bi-calendar3"></i>
+
+                <span>
+                    Calendar
+                </span>
+
+            </a>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             LOGOUT
+        ================================================== -->
+
+        <form
+                th:action="@{/logout}"
+                method="post"
+                class="top-navbar-logout-form">
+
+            <button
+                    type="submit"
+                    class="top-navbar-logout">
+
+                <i class="bi bi-box-arrow-right"></i>
+
+                <span>
+                    Logout
+                </span>
+
+            </button>
+
+        </form>
+
+
+    </div>
+
+</nav>
+
+</body>
+
+</html>

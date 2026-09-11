@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<body>
+
+<aside class="dashboard-sidebar" id="dashboardSidebar">
+
+    <!-- BRAND -->
+
+    <div class="sidebar-top">
+
+        <a
+                th:href="@{/dashboard}"
+                class="sidebar-brand">
+
+            <span class="sidebar-brand-icon">
+                <i class="bi bi-check2-square"></i>
+            </span>
+
+            <span class="sidebar-brand-name">
+                Smart<span>Task</span>
+            </span>
+
+        </a>
+
+
+        <!-- COLLAPSE BUTTON -->
+
+        <button
+                type="button"
+                class="sidebar-toggle"
+                id="sidebarToggle"
+                aria-label="Collapse sidebar">
+
+            <i class="bi bi-chevron-left"></i>
+
+        </button>
+
+    </div>
+
+
+    <!-- NAVIGATION -->
+
+    <nav class="sidebar-navigation">
+
+        <div class="sidebar-section-title">
+            WORKSPACE
+        </div>
+
+
+        <!-- Dashboard -->
+
+        <a
+                th:href="@{/dashboard}"
+                class="sidebar-link active"
+                title="Dashboard">
+
+            <i class="bi bi-grid-1x2-fill"></i>
+
+            <span>
+                Dashboard
+            </span>
+
+        </a>
+
+
+        <!-- My Tasks -->
+
+        <a
+                th:href="@{/tasks}"
+                class="sidebar-link"
+                title="My Tasks">
+
+            <i class="bi bi-list-check"></i>
+
+            <span>
+                My Tasks
+            </span>
+
+        </a>
+
+
+        <!-- Board -->
+
+        <a
+                th:href="@{/tasks/board}"
+                class="sidebar-link"
+                title="Board">
+
+            <i class="bi bi-kanban"></i>
+
+            <span>
+                Board
+            </span>
+
+        </a>
+
+
+        <!-- Calendar -->
+
+        <a
+                th:href="@{/calendar}"
+                class="sidebar-link"
+                title="Calendar">
+
+            <i class="bi bi-calendar3"></i>
+
+            <span>
+                Calendar
+            </span>
+
+        </a>
+
+    </nav>
+
+
+    <!-- BOTTOM -->
+
+    <div class="sidebar-bottom">
+
+        <div class="sidebar-divider"></div>
+
+
+        <div class="sidebar-user">
+
+            <div class="sidebar-avatar">
+
+                <i class="bi bi-person"></i>
+
+            </div>
+
+
+            <div class="sidebar-user-info">
+
+                <strong>
+                    My Account
+                </strong>
+
+                <span>
+                    Task Manager
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- LOGOUT -->
+
+        <form
+                th:action="@{/logout}"
+                method="post">
+
+            <button
+                    type="submit"
+                    class="sidebar-logout"
+                    title="Logout">
+
+                <i class="bi bi-box-arrow-right"></i>
+
+                <span>
+                    Logout
+                </span>
+
+            </button>
+
+        </form>
+
+    </div>
+
+</aside>
+
+</body>
+
+</html>
